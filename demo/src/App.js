@@ -4,17 +4,23 @@ import Home from "./routes/Home"
 import About from "./routes/About"
 import Project from "./routes/Project"
 import Contact from "./routes/Contact"
-import {Route,Routes} from "react-router-dom"
+import { BrowserRouter,Route,Routes} from "react-router-dom"
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <>
+    <BrowserRouter>
+    <Navbar/>
     <Routes>
       <Route path="/" element={<Home/>} />
       <Route path="/project" element={<Project/>} />
       <Route path="/about" element={<About/>} />
       <Route path="/contact" element={<Contact/>} />
     </Routes>
+    <Footer/>
+    </BrowserRouter>
     </>
   );
 }
